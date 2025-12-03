@@ -10,12 +10,12 @@ class Observer {
 class Assignment {
   constructor(assignmentName) {
     this.assignmentName = assignmentName;
-    this.status = "created";          // initial internal state
-    this._grade = undefined;          // private-by-convention
+    this.status = "created";   // initial internal state
+    this._grade = undefined;    // private-by-convention
   }
 
   setGrade(grade) {
-    this._grade = grade;              // store private grade
+    this._grade = grade;  // store private grade
     this.status = grade > 50 ? "pass" : "fail";  // required logic
   }
 }
@@ -25,10 +25,10 @@ class Student {
   constructor(fullName, email, observer) {
     this.fullName = fullName;
     this.email = email;
-    this.assignmentStatuses = [];           // list of Assignment objects
-    this.overallGrade = 0;                  // average grade
-    this._observer = observer;              // observer for notifications
-    this._gradesByAssignment = {};          // assignmentName → grade
+    this.assignmentStatuses = [];  // list of Assignment objects
+    this.overallGrade = 0;    // average grade
+    this._observer = observer; // observer for notifications
+    this._gradesByAssignment = {}; // assignmentName → grade
     this._submittedAssignments = new Set(); // track submissions
   }
 
@@ -161,7 +161,7 @@ class Student {
 // stores students and manages  assignment actions
 class ClassList {
   constructor(observer) {
-    this.students = [];        // array of Student objects
+    this.students = []; // array of Student objects
     this._observer = observer; // used for reminders
   }
 
@@ -245,3 +245,4 @@ module.exports = {
   Student,
   ClassList
 };
+
